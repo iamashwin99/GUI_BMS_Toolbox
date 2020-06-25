@@ -1,0 +1,69 @@
+file %drive cycles
+capacity 15 Ah
+weight 450 g
+vmax
+vnom
+vmin
+%module parameters
+numParallel
+numSeries
+celloverhead 0.8
+
+%pack parameters
+
+numSeries 12
+overhead 0.1
+fullSOC 75
+emptySOC 25
+efficiency 0.96
+
+%motor parematers
+
+Lmax 275 Nm 
+RPMrated 4000
+RPMmax 1200
+motorefficiency 0.95
+inertia 0.2 Kg/m2
+
+
+%wheel parameters
+radius 0.35 [m], 
+inertia 8 [kg/m2], 
+rollCoef 0.0111
+
+%drivetrain parameters
+inverter efficiency 0.94
+fractional regen torque limit 0.9
+gear ratio 12
+gear inertia  0.05 [kg/m2]
+gear efficiency 0.97
+
+
+%vehicle parameters
+# wheels 4, 
+roadForce 0 [N],
+Cd 0.22, 
+frontal area 1.84 [m2], 
+weight 1425 [kg], 
+payload 75 [kg], 
+overhead power 200 W
+
+
+file cellParameter moduleParameter packParameter motorParameter wheelParameter drivetrainParameter vehicleParameter
+
+
+cellParameter.capacity,cellParameter.weight,cellParameter.vmax,cellParameter.vnom,cellParameter.vmin
+
+
+moduleParameter.numParallel,moduleParameter.numSeries,moduleParameter.overHead
+
+packParameter.numSeries,packParameter.overHead,packParameter.fullsoc,packParameter.emptysoc,packParameter.efficiency
+
+motorParameter.lmax,motorParameter.ratedRPM,motorParameter.maxRPM,motorParameter.efficiency,motorParameter.inertia
+
+wheelParameter.radius,wheelParameter.inertia,wheelParameter.rollCoeff
+
+drivetrainParameter.invertereff,drivetrainParameter.fracregen,drivetrainParameter.gearratio,drivetrainParameter.gearinertia,drivetrainParameter.gearefficiency
+
+
+vehicleParameter.wheels,vehicleParameter.roadForce,vehicleParameter.cd,vehicleParameter.area,vehicleParameter.weight,vehicleParameter.payload,vehicleParameter.overheadpower,
