@@ -1,4 +1,4 @@
-function [] = RunProcessOCVGUI(cellIDs,temps,minV,maxV,saveornot)
+function result = RunProcessOCVGUI(cellIDs,temps,minV,maxV,saveornot)
 
 
 
@@ -19,6 +19,7 @@ function [] = RunProcessOCVGUI(cellIDs,temps,minV,maxV,saveornot)
 % --------------------------------------------------------------------
 % Load raw data from cell tests, then process
 % --------------------------------------------------------------------
+result = 0;
 for theID = 1:length(cellIDs), % loop over all cells
   dirname = cellIDs{theID}; cellID = dirname;
   ind = find(dirname == '_'); % if there is a "_", delete it
