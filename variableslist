@@ -66,4 +66,4 @@ wheelParameter.radius,wheelParameter.inertia,wheelParameter.rollCoeff
 drivetrainParameter.invertereff,drivetrainParameter.fracregen,drivetrainParameter.gearratio,drivetrainParameter.gearinertia,drivetrainParameter.gearefficiency
 
 
-vehicleParameter.wheels,vehicleParameter.roadForce,vehicleParameter.cd,vehicleParameter.area,vehicleParameter.weight,vehicleParameter.payload,vehicleParameter.overheadpower,
+vehicleParameter.wheels,vehicleParameter.roadForce,vehicleParameter.cd,vehicleParameter.area,vehicleParameter.weight,vehicleParameter.payload,vehicleParameter.overheadpower
