@@ -67,3 +67,29 @@ drivetrainParameter.invertereff,drivetrainParameter.fracregen,drivetrainParamete
 
 
 vehicleParameter.wheels,vehicleParameter.roadForce,vehicleParameter.cd,vehicleParameter.area,vehicleParameter.weight,vehicleParameter.payload,vehicleParameter.overheadpower
+
+
+
+
+
+#SCM PCM
+
+PCM
+Ns 3
+Np 3
+maxtime 4800 %Simulation run time in simulated seconds
+t0 = 2700; % Pack rests after time t0
+
+rt   = 0.000125; % 125 microOhm resistance for each tab
+
+rand. init. SOC
+
+rand. init. capacity
+
+random cell-resistance relationships
+
+OCVfromSOCtemp(soc,temp,model)
+
+simPCMGUI(Ns,Np,maxtime,t0,rt,randsoc,randcap,randres)
+simSCMGUI(Ns,Np,maxtime,t0,rt,randsoc,randcap,randres)
+
