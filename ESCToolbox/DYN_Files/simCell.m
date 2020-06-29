@@ -16,6 +16,31 @@
 %         sik - instantaneous hysteresis for all timesteps
 %         OCV - open-circuit voltage for all timesteps
 
+%load readonly/E2model.mat; % load parameter values already created for the E2 cell
+%load readonly/E2_DYN_P25.mat; % load raw test data for the E2 cell at 25 degC
+%deltaT = 1; 
+%time = DYNData.script1.time - DYNData.script1.time(1);    
+%t = (0:deltaT:time(end));
+%voltage = interp1(time,DYNData.script1.voltage,t);
+%current = interp1(time,DYNData.script1.current,t);
+%time = t;
+%[vest,rck,hk,zk,sik,OCV] = simCell(current,25,deltaT,model,1,0,0);
+%subplot(1,2,1)
+%plot(time/3600,voltage,time/3600,vest); % factor of 3600 converts seconds -> hours
+%xlabel('Time (hr)'); ylabel('Voltage (V)'); title('Comparing measured to simulated voltage');
+%legend('Measured voltage','Simulated voltage');
+
+% Now, plot the voltage prediction error
+%subplot(1,2,2)
+%plot(time/3600,1000*(voltage-vest'));
+%xlabel('Time (hr)'); ylabel('Voltage (mV)'); title('Voltage prediction error');
+% Visualize the change in dynamic hysteresis over the test
+%subplot(1,2,1); plot(time/3600,hk);
+%xlabel('Time (hr)'); ylabel('Dynamic hysteresis state (unitless))'); title('Model prediction of hysteresis state');
+
+% Visualize the change in instantaneous hysteresis state over the test
+%subplot(1,2,2); plot(time/3600,sik);
+%xlabel('Time (hr)'); ylabel('Instantaneous hysteresis state (unitless))'); title('Model prediction of instantaneous hyst.');
 % Copyright (c) 2015 by Gregory L. Plett of the University of Colorado 
 % Colorado Springs (UCCS). This work is licensed under a Creative Commons 
 % Attribution-NonCommercial-ShareAlike 4.0 Intl. License, v. 1.0.
@@ -69,3 +94,4 @@ function [vk,irk,hk,zk,sik,OCV] = simCell(ik,T,deltaT,model,z0,iR0,h0)
   % Compute output equation
   OCV = OCVfromSOCtemp(zk,T,model);
   vk = OCV - irk*RParam' - ik.*R0Param + M*hk + M0*sik;
+  
